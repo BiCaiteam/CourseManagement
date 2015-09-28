@@ -36,6 +36,7 @@ public class MainActivity extends Activity implements OnClickListener{
 			case R.id.button2_openDate:
 				Intent intent2=new Intent();
 				intent2.setClass(MainActivity.this, ExcelDate.class);
+				startActivity(intent2);
 				break;
 			}
 			

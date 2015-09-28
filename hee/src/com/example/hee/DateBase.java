@@ -16,8 +16,7 @@ public DateBase(Context context, String name, CursorFactory factory, int version
 String tbname="edb";
 
         public void onCreate(SQLiteDatabase db) {
-        
-                String sql = "CREATE TABLE tb_test (_id INTEGER DEFAULT '1' NOT NULL PRIMARY KEY AUTOINCREMENT,class_jb TEXT  NOT NULL,class_ysbj TEXT  NOT NULL,title TEXT  NOT NULL,content_ysbj TEXT  NOT NULL)";
+                String sql =  "create table edb (id      int    null, nianji      char varying(8)      null,  zhuanye                  varchar(20)          null, renshu                 int                  null, kechengmingcheng                 varchar(50)          null,xuanxiuleixing              varchar(20)          null,  xuefen              float                null,xueshi                   int                  null,shiyanxueshi                int                  null,shangjixueshi                 int                  null, qizhizhouxu                 varchar(30)          null,renkejiaoshi                varchar(12)          null,beizhu                varchar(50)          null)";
                 
                 db.execSQL(sql);//需要异常捕获
         }
@@ -27,18 +26,25 @@ String tbname="edb";
                 db.execSQL(sql);
                 onCreate(db);
         }
-
+       /* zhuanye  
+        renshu                
+        kechengmingcheng   
+        ,xuanxiuleixing        
+        xuefen             
+        xueshi                  
+        shiyanxueshi               
+        shangjixueshi                
+         qizhizhouxu               
+         renkejiaoshi              
+         beizhu              */
         /**
          * 添加数据
          */
-        public long insert(String tname, int tage, String ttel){
+        public void insert(int id,String zhuanye,int renshu,String kechengmingcheng ,String xuanxiuleixing  , float xuefen ,int xueshi ,int shiyanxueshi ,int shangjixueshi  ,String qizhizhouxu ,String renkejiaoshi ,String beizhu){
                 SQLiteDatabase db= getWritableDatabase();//获取可写SQLiteDatabase对象
                 //ContentValues类似map，存入的是键值对
-                       ContentValues contentValues = new ContentValues();
-                       contentValues.put("tname", tname);
-                contentValues.put("tage", tage);
-                       contentValues.put("ttel", ttel);
-                return db.insert(tbname, null, contentValues);
+                String sql = "insert into user(zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('" + id + "','" + zhuanye + ",'" + renshu + "','" + kechengmingcheng + "','" + xuanxiuleixing + "','" + xuefen + "','" + xueshi + "'','" + shiyanxueshi + "'','" + shangjixueshi + "'','" + qizhizhouxu  + "'','" +  renkejiaoshi + "'', '" +   beizhu + "'' beizhu)";//插入操作的SQL语句
+                		db.execSQL(sql);//执行SQL语句
                 }
         /**
          * 删除记录
