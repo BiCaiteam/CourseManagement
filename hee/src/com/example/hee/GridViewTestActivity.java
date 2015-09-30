@@ -85,45 +85,16 @@ public class GridViewTestActivity extends Activity {
   
     public void addData(){ 
     	  String id ;String shangjixueshi;String xueshi;String renshu; String qizhizhouxu;String renkejiaoshi;String beizhu; String zhuanye; String xuanxiuleixing;String kechengmingcheng; String shiyanxueshi; String xuefen;String[] items=new String[12];
- SQLiteDatabase mSQLiteDatabase = this.openOrCreateDatabase("test",MODE_PRIVATE,null);
-    	// SQLdm s = new SQLdm();
-        // SQLiteDatabase mSQLiteDatabase =s.openDatabase(getApplicationContext()); 
-    	 
-    	    String CREATE_TABLE =  "create table first(id       varchar(50)     null,                 zhuanye                  varchar(50)          null, renshu                 varchar(50)                  null, kechengmingcheng                 varchar(50)          null,xuanxiuleixing              varchar(50)          null,  xuefen             varchar(50)               null,xueshi                   varchar(50)                  null,shiyanxueshi                varchar(50)                  null,shangjixueshi                varchar(50)                  null, qizhizhouxu                 varchar(50)          null,renkejiaoshi                varchar(50)          null,beizhu                varchar(50)          null)";
-    	   mSQLiteDatabase.execSQL(CREATE_TABLE);
  
-    	 
-          String INSERT_DATA = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2012','计算机科学与技术','87','Internet技术与协议分析实验','实践选修','1','24',null,null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA);
-         String INSERT_DATA1 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2012','计算机科学与技术','87','IT企业项目实训','实践选修','2','48',null,null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA1);
-          String INSERT_DATA2 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2012','计算机科学与技术','87','多媒体通讯技术','专业选修','2','32',null,null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA2);
-          String INSERT_DATA3 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2012','计算机科学与技术','87','分布式操作系统','专业选修','2','32',null,null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA3);
-          String INSERT_DATA4 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2012','计算机科学与技术','87','分布式系统','专业选修','2','32',null,null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA4);
-          String INSERT_DATA5 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2012','计算机科学与技术','87','广域网技术实验','实践选修','1','24',null,null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA5);
-          String INSERT_DATA6 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2012','计算机科学与技术','87','计算机仿真技术','专业选修','2','32','12',null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA6);
-          String INSERT_DATA7 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2012','计算机科学与技术','87','计算机外部设备','专业选修','2','32',null,null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA7);
-          String INSERT_DATA8 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2012','计算机科学与技术','87','软件可靠性与可信软件','专业选修','2','32',null,null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA8);
-          String INSERT_DATA9 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2012','计算机科学与技术','87',' 网络工程应用开发技术','专业选修','2','32',null,null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA9);
-          String INSERT_DATA10 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2012','计算机科学与技术','87','云计算','专业选修','2','32',null,null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA10);
-          String INSERT_DATA11 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2013','计算机科学与技术','1',' EDA技术','专业方向（限选）1','2','32',null,16,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA11);
-          String INSERT_DATA12 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2013','计算机科学与技术','1',' Java语言程序设计','实践选修','1.5','36',null,18,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA12);
-          String INSERT_DATA13 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2013','计算机科学与技术','1',' Linux操作系统设计实践','实践选修','1.5','32',null,null,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA13);
-          String INSERT_DATA14 = "insert into first(id,zhuanye,renshu,kechengmingcheng ,xuanxiuleixing  , xuefen , xueshi ,shiyanxueshi ,shangjixueshi  , qizhizhouxu , renkejiaoshi , beizhu) values ('2013','计算机科学与技术','1','Web程序设计','专业方向（限选）2','2','32',null,8,null,null,null)";
-          mSQLiteDatabase.execSQL(INSERT_DATA14);
-    	  Cursor c = mSQLiteDatabase.rawQuery("SELECT * FROM  first", null);  
+    	// 初始化，只需要调用一次
+    	  AssetsDatabaseManager.initManager(getApplication());
+    	  // 获取管理对象，因为数据库需要通过管理对象才能够获取
+    	  AssetsDatabaseManager mg = AssetsDatabaseManager.getManager();
+    	  // 通过管理对象获取数据库
+    	  SQLiteDatabase mSQLiteDatabase = mg.getDatabase("test1.db");
+    	  // 对数据库进行操
+    	 // mSQLiteDatabase.execSQL("create table first(id       varchar(50)     null,                 zhuanye                  varchar(50)          null, renshu                 varchar(50)                  null, kechengmingcheng                 varchar(50)          null,xuanxiuleixing              varchar(50)          null,  xuefen             varchar(50)               null,xueshi                   varchar(50)                  null,shiyanxueshi                varchar(50)                  null,shangjixueshi                varchar(50)                  null, qizhizhouxu                 varchar(50)          null,renkejiaoshi                varchar(50)          null,beizhu                varchar(50)          null);");
+    	Cursor c = mSQLiteDatabase.rawQuery("SELECT * FROM  first", null);  
           while (c.moveToNext()) {  
         	  id=c.getString(c.getColumnIndex("id"));
 		       shangjixueshi=c.getString(c.getColumnIndex("shangjixueshi"));
@@ -148,13 +119,13 @@ public class GridViewTestActivity extends Activity {
             saTable.notifyDataSetChanged();
 		   
           }  
-          c.close(); 
+        c.close(); 
             
           //删除数据  
           //mSQLiteDatabase.delete("first", "id > ?", new String[]{"35"});  
-          mSQLiteDatabase.execSQL("drop table first");
+         // mSQLiteDatabase.execSQL("drop table first");
           //关闭当前数据库  
-          mSQLiteDatabase.close();  
+          mg.closeDatabase("test1.db");
             
           //删除test.db数据库  
         
