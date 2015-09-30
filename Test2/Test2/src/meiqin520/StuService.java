@@ -24,21 +24,21 @@ public class StuService {
             String sql="select * from stu";
             ResultSet rs= db.Search(sql, null);
             while (rs.next()) {
-            	String nianji=rs.getString("nianji");
-            	String zhuangye=rs.getString("zhuangye");
+            	String id=rs.getString("id");
+            	String zhuanye=rs.getString("zhuanye");
             	 String kechengmingcheng=rs.getString("kechengmingcheng");
-            	 int zhuangyerenshu=rs.getInt("zhuangyerenshu");
-            	 String xianxiuneixing=rs.getString("xianxiuneixing");
+            	 int renshu=rs.getInt("zrenshu");
+            	 String xuanxiuneixing=rs.getString("xuanxiuneixing");
             	 int xuefen=rs.getInt("xuefen");
             	 int xueshi=rs.getInt("xueshi");
             	 int shangjixueshi=rs.getInt("shangjixueshi");
             	 int shiyanxueshi=rs.getInt("shiyanxueshi");
-            	 String qishizhouqi=rs.getString("qishizhuoqi");
-            	 String renkelaoshi=rs.getString("renkelaoshi");
-            	 String beizhu=rs.getString("beihu");
-                //System.out.println(id+" "+name+" "+sex+ " "+num);
-                list.add(new Stuenty(nianji, zhuangye, kechengmingcheng, zhuangyerenshu, xianxiuneixing, xuefen, xueshi,
-                		shangjixueshi, shiyanxueshi, qishizhouqi, renkelaoshi, beizhu));
+            	 String qizhizhouqi=rs.getString("qizhizhuoqi");
+            	 String renkejiaoshi=rs.getString("renkejiaoshi");
+            	 String beizhu=rs.getString("beizhu");
+                
+                list.add(new Stuenty(id, zhuanye, renshu, kechengmingcheng, xuanxiuneixing, xuefen, xueshi,
+                		shangjixueshi, shiyanxueshi, qizhizhouqi, renkejiaoshi, beizhu));
             }
             
         } catch (SQLException e) {
@@ -65,22 +65,22 @@ public class StuService {
             for (int i = 1; i < rows; i++) {
                 for (int j = 0; j < clos; j++) {
                     //第一个是列数，第二个是行数
-                	String nianji=rs.getCell(j++, i).getContents();//默认最左边编号也算一列 所以这里得j++
-                	String zhuangye=rs.getCell(j++, i).getContents();
+                	String id=rs.getCell(j++, i).getContents();//默认最左边编号也算一列 所以这里得j++
+                	String zhuanye=rs.getCell(j++, i).getContents();
+                         String renshu=rs.getCell(j++, i).getContents();
                 	 String kechengmingcheng=rs.getCell(j++, i).getContents();
-                	 String zhuangyerenshu=rs.getCell(j++, i).getContents();
-                	 String xianxiuneixing=rs.getCell(j++, i).getContents();
+                	 String xuanxiuneixing=rs.getCell(j++, i).getContents();
                 	 String xuefen=rs.getCell(j++, i).getContents();
                 	 String xueshi=rs.getCell(j++, i).getContents();
                 	 String shangjixueshi=rs.getCell(j++, i).getContents();
                 	 String shiyanxueshi=rs.getCell(j++, i).getContents();
-                	 String qishizhouqi=rs.getCell(j++, i).getContents();
-                	 String renkelaoshi=rs.getCell(j++, i).getContents();
+                	 String qizhizhouqi=rs.getCell(j++, i).getContents();
+                	 String renkejiaoshi=rs.getCell(j++, i).getContents();
                 	 String beizhu=rs.getCell(j++, i).getContents();
                     //System.out.println("id:"+id+" name:"+name+" sex:"+sex+" num:"+num);
-                    list.add(new Stuenty(nianji, zhuangye, kechengmingcheng, Integer.parseInt(zhuangyerenshu),
-                    		xianxiuneixing, Integer.parseInt(xuefen),Integer.parseInt(xueshi), Integer.parseInt(shangjixueshi), 
-                    		Integer.parseInt(shiyanxueshi), qishizhouqi, renkelaoshi, beizhu));
+                    list.add(new Stuenty(id, zhuanye, renshu, kechengmingcheng, 
+                    		xianxiuneixing, xuefen , xueshi, shangjixueshi , 
+                    		shiyanxueshi , qishizhouqi, renkelaoshi, beizhu));
                 }
             }
         } catch (Exception e) {
